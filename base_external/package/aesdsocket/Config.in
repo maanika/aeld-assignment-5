@@ -1,0 +1,7 @@
+
+config BR2_PACKAGE_AESDSOCKET
+	bool "aesdsocket"
+	help
+	  Includes the aesdsocket executable and aesdsocket-start-stop script in the kernel image.
+	  Used to understand buildroot start up process and deamons. 
+
