@@ -1,0 +1,30 @@
+#! /bin/sh
+
+case "$1" in
+    start)
+        echo "Loading hello kernel module"
+        /etc/init.d/module_load hello
+
+        echo "Loading faulty kernel module"
+        /etc/init.d/module_load faulty
+
+        echo "Loading scull modules"
+        /etc/init.d/scull_load
+        ;;
+    stop)
+        echo "Unloading hello kernel module"
+        /etc/init.d/module_unload hello
+
+        echo "Unloading faulty kernel module"
+        /etc/init.d/module_unload faulty
+
+        echo "Unloading scull modules"
+        /etc/init.d/scull_unload
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}"
+        exit 1
+esac
+
+exit 0
+
