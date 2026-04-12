@@ -10,6 +10,9 @@ case "$1" in
 
         echo "Loading scull modules"
         /etc/init.d/scull_load
+        
+        echo "Loading aesdchar driver"
+        /usr/bin/aesdchar_load
         ;;
     stop)
         echo "Unloading hello kernel module"
@@ -20,6 +23,10 @@ case "$1" in
 
         echo "Unloading scull modules"
         /etc/init.d/scull_unload
+        
+        echo "Unoading aesdchar driver"
+        /usr/bin/aesdchar_unload
+
         ;;
     *)
         echo "Usage: $0 {start|stop}"
